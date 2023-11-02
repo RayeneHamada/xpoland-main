@@ -100,8 +100,8 @@ function Page({ params }: { params: { exhibitionId: string } }) {
                                         <FreeInscription
                                             exhibitionId={exhibitionId}
                                             setIsAuthentified={setIsAuthentified}
-                                            setInscriptionSelected={(e) => setInscriptionSelected(e)}
-                                            setParticipationSelected={(e) => setParticipationSelected(e)}
+                                            setInscriptionSelected={(e:any) => setInscriptionSelected(e)}
+                                            setParticipationSelected={(e:any) => setParticipationSelected(e)}
                                         />
                                     ) : (
                                         <>page paiement</>
@@ -142,7 +142,7 @@ function Page({ params }: { params: { exhibitionId: string } }) {
                                                     setParticipationSelected(false);
                                                 }}
                                             >
-                                                S'inscrire
+                                                S&apos;inscrire
                                             </div>
                                             <div
                                                 className="connection-choice"
@@ -169,15 +169,15 @@ function Page({ params }: { params: { exhibitionId: string } }) {
                                                     <FreeInscription
                                                         setIsAuthentified={setIsAuthentified}
                                                         exhibitionId={exhibitionId}
-                                                        setInscriptionSelected={(e) => setInscriptionSelected(e)}
-                                                        setParticipationSelected={(e) => setParticipationSelected(e)}
+                                                        setInscriptionSelected={(e:any) => setInscriptionSelected(e)}
+                                                        setParticipationSelected={(e:any) => setParticipationSelected(e)}
                                                     />
                                                 ) : (
                                                     <PaiedInscription
                                                         exhibitionId={exhibitionId}
                                                         setIsAuthentified={setIsAuthentified}
-                                                        setInscriptionSelected={(e) => setInscriptionSelected(e)}
-                                                        setParticipationSelected={(e) => setParticipationSelected(e)}
+                                                        setInscriptionSelected={(e:any) => setInscriptionSelected(e)}
+                                                        setParticipationSelected={(e:any) => setParticipationSelected(e)}
                                                     />
                                                 )
                                             ) : (
@@ -219,7 +219,7 @@ function Page({ params }: { params: { exhibitionId: string } }) {
                             <div className="event-register-right-container">
                                 <h1 className="eventTitle">{eventName}</h1>
                                 <h1 style={{ textAlign: 'center' }}>
-                                    <br />Oups vous êtes un peu en retard, l'évènement est terminé.
+                                    <br />Oups vous êtes un peu en retard, l&apos;évènement est terminé.
                                 </h1>
                             </div>
                         </div>

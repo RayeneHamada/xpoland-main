@@ -27,12 +27,9 @@ function PaiedInscription({ exhibitionId, setInscriptionSelected, setParticipati
     const [step, setStep] = useState(0);
     const [clientSecret, setClientSecret] = useState("");
 
-    const appearance = {
-        theme: 'stripe',
-    };
     const options = {
         clientSecret,
-        appearance,
+        theme : 'stripe',
     };
 
     const renderStep = () => {
@@ -270,7 +267,7 @@ function PaiedInscription({ exhibitionId, setInscriptionSelected, setParticipati
                                     <Option value="Autre - Artisan / Commerçant / Indépendant">Autre - Artisan / Commerçant / Indépendant</Option>
                                 </OptGroup>
                                 <OptGroup label="-- EDUCATION --">
-                                    <Option value="Directeur d'établissement">Directeur d'établissement</Option>
+                                    <Option value="Directeur d'établissement">Directeur d&apos;établissement</Option>
                                     <Option value="Enseignant">Enseignant</Option>
                                     <Option value="Autre (Educ.)">Autre (Educ.)</Option>
                                 </OptGroup>
@@ -308,8 +305,8 @@ function PaiedInscription({ exhibitionId, setInscriptionSelected, setParticipati
                                 },]}>
                             <Input placeholder="Établissement / Entreprise" prefix={<BankOutlined />} onChange={e => setEstablishment(e.target.value)} />
                         </Form.Item>
-                        <Form.Item name="sharedata" valuePropName="checked" onChange={(e: any) => setSharedata(e.target.checked)}>
-                            <Checkbox checked={sharedata}>J'accepte de partager mes données avec les autres visiteurs <br />(Pour des raisons de Networking)</Checkbox>
+                        <Form.Item name="sharedata" valuePropName="checked" >
+                            <Checkbox onChange={(e: any) => setSharedata(e.target.checked)} checked={sharedata}>J&apos;accepte de partager mes données avec les autres visiteurs <br />(Pour des raisons de Networking)</Checkbox>
                         </Form.Item>
                         <Button className="stepButton" loading={loading} htmlType="submit" onClick={submit}>Suivant</Button>
 
