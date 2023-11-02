@@ -1,0 +1,314 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+.event-register-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: 100%;
+}
+
+.event-register-header {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  width: 100%;
+  /* height: 100%; */
+  height: min(750px, 100vh);
+}
+
+.event-register-left {
+  flex: 40%;
+  background-image: url('/assets/img/fair.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.event-register-left-container {
+  margin: 0 auto;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.event-register-left .text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.event-register-left img {
+  width: 100px;
+  object-fit: cover;
+  margin-right: auto;
+  cursor: pointer;
+}
+
+.event-register-left h1 {
+  color: white;
+  font-size: 40px;
+  font-weight: 600;
+  margin: auto;
+}
+
+.event-register-left p {
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.event-register-left ul {
+  list-style: none;
+  color: white;
+  font-weight: 550;
+  padding: 0;
+}
+
+.event-register-left li::before {
+  content: "-";
+  padding-right: 6px;
+  color: red;
+  font-size: 16px;
+}
+
+.event-register-right {
+  flex: 60%;
+  overflow: auto;
+
+}
+
+.event-register-right-container {
+  margin: 0 auto;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  max-width: 630px;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-register-right .right-btn {
+  align-self: flex-end;
+}
+
+.event-register-form {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.event-register-form .react-select {
+  width: 100%;
+  padding: 0em;
+  margin-top: 15px;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  font-size: medium;
+  border-radius: 5px;
+  background-color: rgb(236, 233, 233);
+}
+
+.form-column {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  width: 100%;
+}
+
+.event-register-right p {
+  color: black;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.conditions {
+  margin-top: 20px;
+  color: blueviolet;
+  text-decoration: none;
+}
+
+.ant-form-item {
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+
+.ant-input-affix-wrapper {
+  background-color: rgb(236, 233, 233);
+  border-color: transparent;
+  padding: 0.8em !important;
+  border-radius: 10px;
+}
+
+.ant-input-affix-wrapper>input.ant-input {
+  background-color: rgb(236, 233, 233) !important;
+}
+
+.ant-form-item-control-input-content {
+  padding: 0.1em !important;
+}
+
+.participationInput {
+  padding: 0 !important;
+}
+
+.ant-row .ant-form-item-row {
+  padding: 0 !important;
+}
+
+.ant-input-affix-wrapper .ant-input-affix-wrapper-status-error {
+  background-color: rgb(236, 233, 233);
+}
+
+.timer-form .ant-btn {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-item {
+  width: fit-content !important;
+  margin: 5px
+}
+
+.eventTitle {
+  font-weight: 600;
+  text-align: center;
+  font-size: 40px;
+  color: green;
+}
+
+.stepButton {
+  background-color: blueviolet;
+  color: white;
+  border-radius: 15px;
+  font-weight: 500 !important;
+  width: 100%;
+  height: 40px !important;
+}
+
+.stepButton:hover {
+  background-color: rgb(151, 95, 204);
+  color: white!important;
+  border: rgb(151, 95, 204);
+  height: 40px !important;
+
+}
+
+.timer-header {
+  width: 350px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.timer-header h3 {
+  margin: auto;
+  color: #5127C5;
+  font-size: xx-large;
+  font-weight: 700;
+}
+
+.timer-header p {
+  margin: auto;
+  color: gray;
+  font-size: large;
+  font-weight: 500;
+}
+
+.timer-container {
+  position: absolute;
+  /*Can also be `fixed`*/
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  /*Solves a problem in which the content is being cut when the div is smaller than its' wrapper:*/
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  width: 35%;
+  height: fit-content;
+  background: linear-gradient(90deg,
+          rgba(168, 226, 7, 0.4) 0%,
+          rgba(102, 222, 33, 0.4) 100%);
+  padding: 3%;
+  border-radius: 20px;
+}
+
+.ant-select {
+  width: 100% !important;
+  background-color: rgb(236, 233, 233);
+  border-color: transparent;
+  padding: 0.8em !important;
+  border-radius: 10px;
+}
+
+.ant-select-selector {
+  background-color: rgb(236, 233, 233) !important;
+  border: 1px solid transparent !important;
+}
+
+
+.connection-choices {
+  width: 100%;
+  height: 30em;
+  display: flex;
+  align-content: space-around;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.connection-choice {
+  width: 12em;
+  height: 12em;
+  border: solid #5127C5 3px;
+  background-color: #5127C5;
+  color:#fff;
+  font-size: 1.5em;
+  font-weight:600;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 12%;
+}
+.connection-choice:hover{
+  cursor: pointer;
+  background-color: #fff;
+  color:#5127C5;
+}
+
+.unity-canvas{
+  width: 100%;
+  height: 100%; 
+}
