@@ -12,8 +12,8 @@ export default function CheckoutForm({ exhibitionId }:any) {
     const stripe = useStripe();
     const elements = useElements();
 
-    const [message, setMessage] = useState("null");
-    const [isLoading, setIsLoading] = useState(false);
+    const [message, setMessage] = useState<string>();
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
     useEffect(() => {
         if (!stripe) {
@@ -61,7 +61,7 @@ export default function CheckoutForm({ exhibitionId }:any) {
             elements,
             confirmParams: {
                 // Make sure to change this to your payment completion page
-                return_url: "http://localhost:3000/exhibition/payment/success/" + exhibitionId,
+                return_url: "http://localhost:3000/payment/success/" + exhibitionId,
             },
         });
 
@@ -83,7 +83,7 @@ export default function CheckoutForm({ exhibitionId }:any) {
         <form id="payment-form" onSubmit={handleSubmit}>
             <PaymentElement id="payment-element" /><br />
             <Button className="stepButton" loading={isLoading} htmlType="submit">Payer</Button>
-
+            {exhibitionId}
             {/* Show any error or success messages */}
             {message && <div id="payment-message">{message}</div>}
         </form>

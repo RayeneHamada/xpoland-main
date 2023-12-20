@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Form, Button, Input, Radio, Select, Checkbox, Result } from "antd";
 import { MailOutlined, UserOutlined, PhoneOutlined, CalendarOutlined, BankOutlined } from '@ant-design/icons';
 import { participateFreely } from '../../services/visitorService';
+import axios, { AxiosError } from "axios";
 // This is the React component that will be rendering the Unity app.
 
 function FreeInscription({ exhibitionId, setInscriptionSelected, setParticipationSelected }: any) {
@@ -331,8 +332,13 @@ function FreeInscription({ exhibitionId, setInscriptionSelected, setParticipatio
             } else {
                 console.log(`${response.status}: ${response.data}`);
             }
-        } catch (error) {
-            console.log(error);
+        } catch (error: any | AxiosError) {
+            if (axios.isAxiosError(error) && error.response && error.response.status === 409) {
+                setInscriptionSelected(false);
+                setParticipationSelected(true);
+            } else {
+                console.error(error);
+            }
         } finally {
             setLoading(false);
         }
